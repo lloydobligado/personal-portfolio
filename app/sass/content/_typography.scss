@@ -1,0 +1,22 @@
+a, a:active, a:visited {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+}
+
+.txt-transform {
+    &-u {
+        text-transform: uppercase;
+    }
+    &-l {
+        text-transform: lowercase;
+    }
+}

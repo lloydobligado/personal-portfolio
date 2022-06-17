@@ -1,0 +1,59 @@
+@use '../utilities/' as u;
+
+.navbar {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;  
+
+    &__container {
+        height: 200px;
+        margin: 80px;
+        width: 150px;
+        z-index: 3;
+        &__item {
+            a {
+                position: relative;
+                margin: 5px 0;
+                span {
+                    letter-spacing: -1;
+                    font-family: u.$openSans;
+                    font-weight: bold;
+                    
+                }
+
+            }
+            a > div:nth-child(1) span{
+                will-change: transform;
+                transform-style: preserve-3d;
+                transition: .5s;
+                transition-delay: calc(0.05s * var(--index));
+                transform-origin: bottom;
+                display: inline-block;
+            }
+
+            a > div:nth-child(2) span{
+                will-change: transform;
+                transform-style: preserve-3d;
+                transition: .5s;
+                transition-delay: calc(0.05s * var(--index));
+                transform-origin: top;
+                display: inline-block;
+                transform: translate3d(0, 100%, 0) rotateX(-90deg);
+            }
+            
+            a:hover > div:nth-child(1) span{
+                transform: translate3d(0, -100%, 0) rotateX(-90deg);
+                color: gray;
+                transition: .5s;
+            }
+
+            a:hover > div:nth-child(2) span{
+                transform: translate3d(0, 0, 0) rotateX(0deg);
+                color: gray;
+                transition: .5s;
+            }
+        }
+    }
+          
+}

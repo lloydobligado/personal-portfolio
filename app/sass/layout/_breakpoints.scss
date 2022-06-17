@@ -1,0 +1,15 @@
+@use '../globals' as f;
+
+$breakpoints-down: (
+    "sm": f.em(575.98),
+    "md": f.em(767.98),
+    "lg": f.em(991.98),
+    "xl": f.em(1199.98),
+    "xxl": f.em(1399.88)
+);
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content
+    }
+}
